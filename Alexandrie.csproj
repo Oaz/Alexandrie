@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EE5BADD4-F8E0-404B-9872-8930908E219E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Alexandrie</RootNamespace>
+    <AssemblyName>Alexandrie</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>False</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>True</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>False</ConsolePause>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="v1\HistoiresUtilisateur.cs" />
+    <Compile Include="v2\HistoiresUtilisateur.cs" />
+    <Compile Include="v2\src\Identification\Emprunt.cs" />
+    <Compile Include="v2\src\Identification\Adhérent.cs" />
+    <Compile Include="v2\src\Modèle\Adhérent.cs" />
+    <Compile Include="v2\src\Modèle\Emprunt.cs" />
+    <Compile Include="Persistance.cs" />
+    <Compile Include="v1\src\Commandes\Emprunt.cs" />
+    <Compile Include="v1\src\Commandes\Adhérent.cs" />
+    <Compile Include="v1\tests\TestsCommandes.cs" />
+    <Compile Include="v1\src\Requêtes\Bibliotheque.cs" />
+    <Compile Include="v1\src\Requêtes\RésuméAdherent.cs" />
+    <Compile Include="v1\src\Requêtes\RésuméEmprunt.cs" />
+    <Compile Include="v1\tests\TestsRequêtes.cs" />
+    <Compile Include="v2\src\Commandes\Adhérent.cs" />
+    <Compile Include="v2\src\Commandes\Emprunt.cs" />
+    <Compile Include="v2\src\Requêtes\RésuméAdherent.cs" />
+    <Compile Include="v2\src\Requêtes\RésuméEmprunt.cs" />
+    <Compile Include="v2\tests\TestsCommandes.cs" />
+    <Compile Include="v2\tests\TestsRequêtes.cs" />
+    <Compile Include="v1\src\Requêtes\IBibliotheque.cs" />
+    <Compile Include="v1\src\Commandes\Bibliotheque.cs" />
+    <Compile Include="v1\src\Commandes\IBibliotheque.cs" />
+    <Compile Include="v2\src\Bibliotheque.cs" />
+    <Compile Include="v2\src\Commandes\IBibliotheque.cs" />
+    <Compile Include="v2\src\Requêtes\IBibliotheque.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Folder Include="v1\" />
+    <Folder Include="v2\" />
+    <Folder Include="v1\src\" />
+    <Folder Include="v1\tests\" />
+    <Folder Include="v2\src\" />
+    <Folder Include="v2\tests\" />
+    <Folder Include="v2\src\Identification\" />
+    <Folder Include="v2\src\Modèle\" />
+  </ItemGroup>
+</Project>
